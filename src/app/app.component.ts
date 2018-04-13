@@ -12,9 +12,7 @@ export class AppComponent implements OnInit{
 
   isLoggedIn: boolean = false;
 
-  routerNavigation() {
-    
-  }
+  //routerNavigation() {}
   
   ngOnInit() {
     
