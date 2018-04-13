@@ -1,24 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app';
-
+export class AppComponent implements OnInit{
+  
   constructor(private router: Router) {}
 
   isLoggedIn: boolean = false;
 
+  routerNavigation() {
+    
+  }
+  
   ngOnInit() {
     
     if(this.isLoggedIn == true) {      
-      this.router.navigate(['login'])
+      this.router.navigate([''])
     } else {      
-      this.router.navigate(['/'])
+      this.router.navigate(['login'])
     }
   }
 }
