@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private router: Router) {}
+
+  isLoggedIn: boolean = false;
+
+  ngOnInit() {
+    
+    if(this.isLoggedIn == true) {      
+      this.router.navigate(['login'])
+    } else {      
+      this.router.navigate(['/'])
+    }
+  }
 }
