@@ -4,15 +4,17 @@ import { NgModule } from '@angular/core';
 import { routes } from './app.router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingModule} from 'ngx-loading';
+import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/index';
-
+import { LoginComponent, DashboardComponent } from './components/index';
+import { AuthService } from './services/index';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -20,10 +22,11 @@ import { LoginComponent } from './components/index';
     routes,
     FormsModule,
     ReactiveFormsModule,
-    LoadingModule
+    LoadingModule,
+    HttpModule
     
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

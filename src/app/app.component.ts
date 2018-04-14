@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { AuthService} from './services/index';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,17 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   
-  constructor(private router: Router) {}
+  constructor(private router: Router, private service: AuthService) {}
 
-  isLoggedIn: boolean = false;
+  get isLoggedIn() {
+    return this.service.isLoggedIn();
+  }
 
-  //routerNavigation() {}
+  routerNavigation() {}
   
   ngOnInit() {
-    
     if(this.isLoggedIn == true) {      
-      this.router.navigate([''])
+      this.router.navigate(['dashboard'])
     } else {      
       this.router.navigate(['login'])
     }
