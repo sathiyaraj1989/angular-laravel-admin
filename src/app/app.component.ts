@@ -15,6 +15,11 @@ export class AppComponent implements OnInit{
     return this.service.isLoggedIn();
   }
 
+  logout() {
+    this.service.logout();
+    this.router.navigate(['login']);
+  }
+
   routerNavigation() {}
   
   ngOnInit() {

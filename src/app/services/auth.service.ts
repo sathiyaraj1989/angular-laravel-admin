@@ -15,9 +15,15 @@ export class AuthService {
     return this.loggedIn;
   }
 
+  logout() {
+    this.loggedIn = false;
+    localStorage.removeItem('access_token');
+
+  }
+
   private outhUrl = 'http://localhost:81/laravel/laravel-angular-services/public/oauth/token';
 
-  loginSubmit(Email: string, Password: string): Observable<any> {
+  loginSubmit(email: string, password: string): Observable<any> {
 
     var headers = new Headers({
       "Content-type" : "application/json",
@@ -28,8 +34,8 @@ export class AuthService {
       grant_type  : "password",
       client_id : 2,
       client_secret: "HqbNzgjbp2nTlGhPTCsra2VqUjCtfxfyhrPgWfU1",
-      username  : Email,
-      password  : Password,
+      username  : email,
+      password  : password,
       scope : ""
     }
 

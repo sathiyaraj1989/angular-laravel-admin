@@ -7,14 +7,16 @@ import { LoadingModule} from 'ngx-loading';
 import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
-import { LoginComponent, DashboardComponent } from './components/index';
-import { AuthService } from './services/index';
+import { LoginComponent, DashboardComponent, UserComponent } from './components/index';
+import { AuthService, ApiService } from './services/index';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { AuthService } from './services/index';
     HttpModule
     
   ],
-  providers: [AuthService],
+  providers: [AuthService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
