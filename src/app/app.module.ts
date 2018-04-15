@@ -5,6 +5,7 @@ import { routes } from './app.router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingModule} from 'ngx-loading';
 import { HttpModule } from '@angular/http'
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { AppComponent } from './app.component';
 import { LoginComponent, DashboardComponent, UserComponent } from './components/index';
@@ -25,7 +26,8 @@ import { AuthService, ApiService } from './services/index';
     FormsModule,
     ReactiveFormsModule,
     LoadingModule,
-    HttpModule
+    HttpModule,
+    Ng2SmartTableModule
     
   ],
   providers: [AuthService, ApiService],

@@ -23,10 +23,15 @@ export class ApiService {
   }
 
   httpGet(url: any): Observable<any>{
-    alert(this.baseUrl);
     return this.http.get(this.baseUrl + url, this.options)
       .map((res: Response) => res.json())
       .catch(this.handleError);
+  }
+
+  httpPost(url: any, data: any): Observable<any> {
+    return this.http.post(this.baseUrl + url, data, this.options)
+      .map((res: Response) => res.json()).
+      catch((this.handleError));
   }
 
   private handleError(err) {
