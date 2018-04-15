@@ -32,6 +32,7 @@ export class UserComponent implements OnInit {
   successMessage: boolean = false;
   errorMessage: boolean = false;
   statusMessage: any;
+  groupItem: any;
   usersSource : LocalDataSource;
   userControl:boolean = false;
   usersItem: any;
@@ -52,8 +53,13 @@ export class UserComponent implements OnInit {
   clearaddForm() {
     this.userControl = true;
     this.usersItem = '';
-
   }
+
+  usersInfo(rowItem: any) {
+    this.usersItem = rowItem.data;
+    this.userControl = true;
+  }
+
   userSetCtrl(value: any) { 
     let userDetails: any = {};
     userDetails = value;

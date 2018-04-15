@@ -10,7 +10,7 @@
     <section class="content_section subcompany_content col-xs-12" *ngIf="!userControl; else usersFormTemplate">
         <article class="grid_block">
             <div class="table-responsive subcompany_table">
-                <ng2-smart-table class="table table-hover table-responsive" [settings]="usersSettings" [source]="usersSource" edit (userRowSelect)="usersInfo($event)" ></ng2-smart-table>
+                <ng2-smart-table class="table table-hover table-responsive" [settings]="usersSettings" [source]="usersSource" (userRowSelect)="usersInfo($event)" ></ng2-smart-table>
             </div>   
         </article>
     </section>
@@ -23,19 +23,19 @@
                             <form [formGroup]="userForm" (ngSubmit)="userSetCtrl(userForm.value)">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input class="form-control" type="text" name="Name" formControlName="Name" [ngClass]="{ has_error : !userForm.controls['Name'].valid }" placeholder="Enter name">                               
+                                    <input class="form-control" type="text" name="Name" formControlName="Name" [ngModel]="usersItem?.name" [ngClass]="{ has_error : !userForm.controls['Name'].valid }" placeholder="Enter name">                               
                                     <div class="error_msg" *ngIf="userForm.controls['Name'].hasError('required') && userForm.controls['Name'].touched">You must enter name</div>                                    
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input class="form-control" type="email" name="Email" placeholder="Enter email" formControlName="Email" [ngClass]="{ has_error: !userForm.controls['Email'].valid }" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                                    <input class="form-control" type="email" name="Email" placeholder="Enter email" formControlName="Email" [ngModel]="usersItem?.email" [ngClass]="{ has_error: !userForm.controls['Email'].valid }" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
                                     <div class="error_msg" *ngIf="userForm.controls['Email'].hasError('required') && userForm.controls['Email'].touched">You Must Enter Email</div>
                                     <div class="error_msg" *ngIf="userForm.controls['Email'].hasError('pattern') && userForm.controls['Email'].touched">Please Enter Valid Email</div>
                                 </div> 
                                 <div class="form-group">
                                     <label>Password</label>
                                     <input class="form-control" type="password" name="Password" placeholder="Enter Password" formControlName="Password" [ngClass]="{ has_error: !userForm.controls['Password'].valid }">
-                                    <div class="error_msg" *ngIf="userForm.controls['Password'].hasError('required') && userForm.controls['EmaPasswordil'].touched">You Must Enter Pasword</div>                                        
+                                    <div class="error_msg" *ngIf="userForm.controls['Password'].hasError('required') && userForm.controls['Password'].touched">You Must Enter Pasword</div>                                        
                                 </div>                                
                                 <button type="submit" class="btn btn-default" [disabled]="!userForm.valid">Save</button>
                                 <button class="btn btn-default" type="button" (click)="userControl = false">Cancel</button>
