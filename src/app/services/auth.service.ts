@@ -21,7 +21,8 @@ export class AuthService {
 
   }
 
-  private outhUrl = 'http://localhost:81/laravel/laravel-angular-services/public/oauth/token';
+  //private outhUrl = 'http://localhost:81/laravel/laravel-angular-services/public/oauth/token';
+  private outhUrl = 'http://localhost/sathiyaraj/laravel/angular-laravel-services/public/oauth/token';
 
   loginSubmit(email: string, password: string): Observable<any> {
 

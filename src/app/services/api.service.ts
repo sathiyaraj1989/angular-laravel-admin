@@ -5,7 +5,9 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class ApiService {
 
-  baseUrl = 'http://localhost:81/laravel/laravel-angular-services/public/api/';
+  //baseUrl = 'http://localhost:81/laravel/laravel-angular-services/public/api/';
+  baseUrl = 'http://localhost/sathiyaraj/laravel/angular-laravel-services/public/api/';
+  
   headers : Headers;
   options : RequestOptions;
 

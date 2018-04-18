@@ -1,4 +1,13 @@
 <div class="container">
+    <div class="alert alert-danger" [ngClass]="{show_msg: errorMessage !=''}">
+        <h5 class="title">Failed !</h5>
+        <h5>Login Failed. Please Enter Valid Username and Password</h5>
+    </div>
+        
+    <div class="alert alert-warning" [ngClass]="{show_msg: warningMessage !=''}">
+        <h5 class="title">Warning !</h5>
+        <h5>You Must Enter Username and Password to Login</h5>
+    </div>
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">

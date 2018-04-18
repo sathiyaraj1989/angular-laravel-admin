@@ -18,6 +18,9 @@ export class UserComponent implements OnInit {
       email: {
         title: 'Email'
       },
+      status: {
+        title: 'Status'
+      },
       created_at: {
         title : 'Created'
       },
@@ -37,6 +40,7 @@ export class UserComponent implements OnInit {
   userControl:boolean = false;
   usersItem: any;
   userForm: FormGroup;
+  filterSelect: any= true;
 
   constructor(private service: ApiService, private fb: FormBuilder) {
     this.userForm = fb.group({

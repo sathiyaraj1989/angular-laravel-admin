@@ -10,6 +10,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { AppComponent } from './app.component';
 import { LoginComponent, DashboardComponent, UserComponent } from './components/index';
 import { AuthService, ApiService } from './services/index';
+import { ActiveUserFilterPipe } from './pipes/index';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AuthService, ApiService } from './services/index';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    UserComponent
+    UserComponent,
+    ActiveUserFilterPipe
   ],
   imports: [
     BrowserModule,
