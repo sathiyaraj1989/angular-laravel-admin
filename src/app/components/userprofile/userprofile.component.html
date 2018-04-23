@@ -1,7 +1,35 @@
 <div id="page-wrapper">
   <div class="row">
       <div class="col-lg-12">
-          <h1 class="page-header">Users</h1>
+          <h1 class="page-header">{{ userInfo.name}}</h1>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">Profile Information</div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3" align="center">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjbVNaLjekvDAyZ6QEo8iiPzFJoSQvsL5KRdmRBAu5kvKX4lcY" alt="No Image defined"/>
+                        </div>
+                        <div class="col-md-9 col-lg-9">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>{{userInfo.name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{{ userInfo.email }}</td>
+                                    </tr>
+                                </tbody>                                
+                            </table>
+                            <a href="#" class="btn btn-primary" routerLink="">Edit Profile</a>
+                            <a href="#" class="btn btn-primary" routerLink="/changePassword">Change Password</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
       </div>      
   </div>  
 </div>

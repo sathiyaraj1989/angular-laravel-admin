@@ -86,7 +86,7 @@ export class UserComponent implements OnInit {
   getUsers() {
     this.service.httpGet("users")
       .subscribe(res => {
-        this.usersSource = new LocalDataSource(res);
+        this.usersSource = res;
       })
   }
 }

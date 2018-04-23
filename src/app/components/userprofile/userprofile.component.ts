@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/index';
+import { LocalDataSource } from 'ng2-smart-table';
 
 @Component({
   selector: 'app-userprofile',
@@ -7,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserprofileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ApiService) { }
 
+  userInfo : any;
   ngOnInit() {
+    this.getUserInfo(); 
   }
-  
+
+  getUserInfo() {
+    this.service.httpGet("user")
+      .subscribe(res => {
+        if(res.length != 0) {
+          this.userInfo =  res;
+        }        
+      })
+  }
 
 }

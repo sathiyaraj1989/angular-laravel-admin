@@ -13,15 +13,14 @@ export class ActiveUserFilterPipe implements PipeTransform {
 
       if(filterSelect == false) {
         let filteredItems = items.filter(function(items){
-          return items.status == false;          
+          return items.status == "false";          
         })
         return filteredItems;
       } else {
         let filteredItems = items.filter(function(items){
-          return items.status == true;
+          return items.status == "true";
         })
         return filteredItems;
-
       }
     }
   }

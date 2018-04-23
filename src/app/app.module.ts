@@ -8,7 +8,7 @@ import { HttpModule } from '@angular/http'
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 import { AppComponent } from './app.component';
-import { LoginComponent, DashboardComponent, UserComponent, UserprofileComponent } from './components/index';
+import { LoginComponent, DashboardComponent, UserComponent, UserprofileComponent, ChangePasswordComponent } from './components/index';
 import { AuthService, ApiService } from './services/index';
 import { ActiveUserFilterPipe } from './pipes/index';
 
@@ -19,7 +19,8 @@ import { ActiveUserFilterPipe } from './pipes/index';
     DashboardComponent,
     UserComponent,
     ActiveUserFilterPipe,
-    UserprofileComponent
+    UserprofileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
